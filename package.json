@@ -1,0 +1,30 @@
+{
+  "name": "frontend-handwritten",
+  "version": "1.0.0",
+  "description": "Handwritten signature recognition is the ability of computers to recognize handwriting. It is a difficult task for the machine because handwritten signatures are not perfect and can be done with many different flavors. ",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "until-not"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SWAT-Handwritten-Recognition/Frontend.git"
+  },
+  "keywords": [
+    "react.js",
+    "javascript",
+    "redux",
+    "react-redux",
+    "pretty",
+    "react-dom",
+    "eslint",
+    "husky",
+    "enzyme"
+  ],
+  "author": "Bernardo Aguayo Ortega",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SWAT-Handwritten-Recognition/Frontend/issues"
+  },
+  "homepage": "https://github.com/SWAT-Handwritten-Recognition/Frontend#readme"
+}
