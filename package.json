@@ -32,6 +32,11 @@
   },
   "homepage": "https://github.com/SWAT-Handwritten-Recognition/Frontend#readme",
   "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-react": "^7.12.7",
+    "babel-loader": "^8.2.1",
     "html-webpack-plugin": "^4.5.0",
     "webpack": "^5.6.0",
     "webpack-bundle-analyzer": "^4.1.0",
