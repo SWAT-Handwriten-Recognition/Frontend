@@ -1,5 +1,5 @@
-//import webpack plugins
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 //css rules
 // const cssRules = {
@@ -21,24 +21,25 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 //babel rules
 const babelRules = {
-  test: /\.(js|jsx)$/,
-  exclude: /node_modules/,
-  loader: 'babel-loader',
+	test: /\.(js|jsx)$/,
+	exclude: /node_modules/,
+	loader: 'babel-loader',
 };
 
 //export config
 module.exports = {
-  entry: './src/index.jsx',
-  output: {
-    filename: 'bundle.[contentHash].js',
-  },
-  module: {
-    rules: [babelRules],
-  },
-  plugins: [
-    new HtmlWebPackPlugin({
-      title: 'Hand Written',
-      template: './public/index.html',
-    }),
-  ]
+	entry: './src/index.jsx',
+	output: {
+		filename: 'bundle.[contentHash].js',
+	},
+	module: {
+		rules: [babelRules],
+	},
+	plugins: [
+		new HtmlWebPackPlugin({
+			title: 'Hand Written',
+			template: './public/index.html',
+		}),
+		new webpack.HotModuleReplacementPlugin(),
+	],
 };
