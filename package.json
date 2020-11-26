@@ -43,6 +43,7 @@
     "babel-loader": "^8.2.1",
     "babel-plugin-styled-components": "^1.12.0",
     "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.1",
     "eslint": "^7.14.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
@@ -64,24 +65,23 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format --staged && npm run lint"
+      "pre-commit": "npm run format --staged && npm run lint && npm run test"
     }
+  },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>./setupTests.js"
+    ],
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      ".test.(js)$/",
+      "node"
+    ]
   }
-  ,
-	"jest": {
-		"verbose": true,
-		"setupFilesAfterEnv": [
-			"<rootDir>./setupTest.js"
-		],
-		"transform": {
-			"^.+\\.[t|j]sx?$": "babel-jest"
-		},
-		"moduleFileExtensions": [
-			"js",
-			"json",
-			"jsx",
-			".test.(js)$/",
-			"node"
-		]
-	}
 }
