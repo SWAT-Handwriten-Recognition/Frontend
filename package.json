@@ -4,7 +4,11 @@
   "description": "Handwritten signature recognition is the ability of computers to recognize handwriting. It is a difficult task for the machine because handwritten signatures are not perfect and can be done with many different flavors. ",
   "main": "index.jsx",
   "scripts": {
-    "test": "until-not"
+    "build": "webpack --config ./webpack.config.prod.js",
+    "dev": "webpack-dev-server --open --config ./webpack.config.dev.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -26,5 +30,13 @@
   "bugs": {
     "url": "https://github.com/SWAT-Handwritten-Recognition/Frontend/issues"
   },
-  "homepage": "https://github.com/SWAT-Handwritten-Recognition/Frontend#readme"
+  "homepage": "https://github.com/SWAT-Handwritten-Recognition/Frontend#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.5.0",
+    "webpack": "^5.6.0",
+    "webpack-bundle-analyzer": "^4.1.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.4.0"
+  }
 }
