@@ -9,7 +9,9 @@
     "dev:hot": "webpack-dev-server --open --hot --config ./webpack.config.dev.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "format": "pretty-quick",
+    "lint": "eslint ./"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "@babel/preset-react": "^7.12.7",
     "babel-loader": "^8.2.1",
     "eslint": "^7.14.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "html-webpack-plugin": "^4.5.0",
     "husky": "^4.3.0",
@@ -53,5 +56,10 @@
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format --staged && npm run lint"
+    }
   }
 }

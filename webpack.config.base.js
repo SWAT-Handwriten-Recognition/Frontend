@@ -21,25 +21,25 @@ const webpack = require('webpack');
 
 //babel rules
 const babelRules = {
-	test: /\.(js|jsx)$/,
-	exclude: /node_modules/,
-	loader: 'babel-loader',
+  test: /\.(js|jsx)$/,
+  exclude: /node_modules/,
+  loader: 'babel-loader',
 };
 
 //export config
 module.exports = {
-	entry: './src/index.jsx',
-	output: {
-		filename: 'bundle.[contentHash].js',
-	},
-	module: {
-		rules: [babelRules],
-	},
-	plugins: [
-		new HtmlWebPackPlugin({
-			title: 'Hand Written',
-			template: './public/index.html',
-		}),
-		new webpack.HotModuleReplacementPlugin(),
-	],
+  entry: './src/index.jsx',
+  output: {
+    filename: 'bundle.[contentHash].js',
+  },
+  module: {
+    rules: [babelRules],
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      title: 'Hand Written',
+      template: './public/index.html',
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };
