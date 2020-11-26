@@ -1,6 +1,10 @@
-import React from 'react'
 import { render } from 'react-dom'
+import styled from 'styled-components'
 
 const root = document.getElementById('root')
 
-render(<h1>Works</h1>, root)
+const Greet = styled.h2`
+  color: red;
+`
+
+render(<Greet>Works</Greet>, root)
