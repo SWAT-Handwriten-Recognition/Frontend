@@ -67,4 +67,21 @@
       "pre-commit": "npm run format --staged && npm run lint"
     }
   }
+  ,
+	"jest": {
+		"verbose": true,
+		"setupFilesAfterEnv": [
+			"<rootDir>./setupTest.js"
+		],
+		"transform": {
+			"^.+\\.[t|j]sx?$": "babel-jest"
+		},
+		"moduleFileExtensions": [
+			"js",
+			"json",
+			"jsx",
+			".test.(js)$/",
+			"node"
+		]
+	}
 }
