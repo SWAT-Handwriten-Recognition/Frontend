@@ -39,6 +39,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       title: 'Hand Written',
       template: './public/index.html',
+      favicon: './src/assets/Favicon/HW.png'
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
