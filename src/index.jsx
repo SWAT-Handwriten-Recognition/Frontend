@@ -1,5 +1,5 @@
 import { render } from 'react-dom'
-import styled from 'styled-components'
+import GlobalStyles from './assets/GlobalStyles/GlobalStyles'
 import App from './components/App/index.jsx'
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
@@ -15,6 +15,7 @@ const persistor = persistStore(store);
 render(
   <Provider store={store}>
     <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
+      <GlobalStyles />
       <App />
     </PersistGate>
   </Provider>,
