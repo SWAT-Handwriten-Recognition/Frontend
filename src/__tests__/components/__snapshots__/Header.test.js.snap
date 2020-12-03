@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> matches the snap shot 1`] = `
+<styled__HeaderContainer>
+  <styled__LogoContainer>
+    <Logo />
+  </styled__LogoContainer>
+  <styled__ButtonsContainer>
+    <styled__Button>
+      Sign in
+    </styled__Button>
+    <styled__Button>
+      Sign up
+    </styled__Button>
+  </styled__ButtonsContainer>
+</styled__HeaderContainer>
+`;

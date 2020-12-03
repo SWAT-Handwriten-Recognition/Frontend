@@ -1,4 +1,10 @@
 {
+  "env": {
+    "testing": {
+      "presets": ["es2015", "stage-1", "react", "flow"],
+      "plugins": ["transform-runtime"]
+    }
+  },
   "presets": [
     [
       "@babel/preset-env",

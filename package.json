@@ -67,7 +67,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "vanta": "^0.5.21"
   },
   "husky": {
     "hooks": {
@@ -80,7 +81,7 @@
       "<rootDir>./setupTests.js"
     ],
     "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
+      "^.+\\.jsx?$": "babel-jest"
     },
     "moduleFileExtensions": [
       "js",
