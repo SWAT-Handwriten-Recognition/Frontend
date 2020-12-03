@@ -12,16 +12,10 @@ const store = configureStore();
 
 const persistor = persistStore(store);
 
-const Greet = styled.div`
-  color: red;
-`
-
 render(
   <Provider store={store}>
     <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
-      <Greet>
-        <App />
-      </Greet>
+      <App />
     </PersistGate>
   </Provider>,
   root,

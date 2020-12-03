@@ -1,6 +1,13 @@
 /**
  * App component, root of the application.
  */
-const App = () => <h1>I am the app</h1>
+import Header from '../Header/index.jsx'
+
+const App = () => {
+
+  return (
+    <Header />
+  )
+}
 
 export default App
