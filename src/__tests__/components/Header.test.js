@@ -1,11 +1,11 @@
 import { shallow } from 'enzyme';
-import App from '../../components/App/index.jsx';
+import Header from '../../components/Header/index.jsx';
 import toJson from 'enzyme-to-json';
 
-describe('<App />', () => {
-  const wrapper = shallow(<App />);
+describe('<Header />', () => {
+  const wrapper = shallow(<Header />);
 
-  it('is the app rendering?', () => {
+  it('is the Header rendering?', () => {
     expect(wrapper.exists()).toBe(true);
   });
 

@@ -31,6 +31,7 @@ export const Button = styled.button`
   font-size: 17px;
   padding: 7px 25px;
   text-decoration: none;
+  transition: .3s;
 
   &:hover {
     background: linear-gradient(
