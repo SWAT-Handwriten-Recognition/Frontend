@@ -22,6 +22,16 @@ export const Title = styled.h2`
   font-size: 4rem;
   font-weight: 300;
   letter-spacing: 1rem;
+
+  @media (max-width: 1024px) {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: .5rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 2.5rem;
+  }
 `;
 export const TitleContainer = styled.div`
   align-items: center;
@@ -29,4 +39,13 @@ export const TitleContainer = styled.div`
   justify-content: center;
   height: 80%;
   width: 50%;
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    width: 100%;
+  }
 `;
