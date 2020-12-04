@@ -3,6 +3,7 @@
  */
 import Header from '../Header/index.jsx'
 import HomeAnimation from '../HomeAnimation/index.jsx'
+import Features from '../Features/index.jsx'
 
 const App = () => {
 
@@ -10,6 +11,7 @@ const App = () => {
     <>
       <Header />
       <HomeAnimation />
+      <Features />
     </>
   )
 }
