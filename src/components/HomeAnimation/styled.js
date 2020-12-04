@@ -19,6 +19,7 @@ export const Title = styled.h2`
   animation-name: ${TrackingInExpand};
   animation-duration: 1.5s;
   color: white;
+  font-family: 'Homemade Apple', cursive;
   font-size: 4rem;
   font-weight: 300;
   letter-spacing: 1rem;
@@ -26,7 +27,7 @@ export const Title = styled.h2`
   @media (max-width: 1024px) {
     font-size: 3.5rem;
     font-weight: 300;
-    letter-spacing: .5rem;
+    letter-spacing: 0.5rem;
   }
 
   @media (max-width: 320px) {
