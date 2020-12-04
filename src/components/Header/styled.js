@@ -6,6 +6,11 @@ export const HeaderContainer = styled.header`
   display: flex;
   height: 20vh;
   justify-content: space-between;
+
+  @media (max-width:425px){
+    flex-direction: column;
+    height: 30vh;
+  }
 `;
 export const LogoContainer = styled.div``;
 export const ButtonsContainer = styled.div`
@@ -13,6 +18,13 @@ export const ButtonsContainer = styled.div`
   justify-content: space-between;
   padding: 1.5rem;
   width: 20%;
+
+  @media (max-width: 1024px) {
+    width: 30%;
+  }
+  @media (max-width: 425px) {
+    width: 70%;
+  }
 `;
 export const Button = styled.button`
   box-shadow: 3px 4px 0px 0px rgba(255, 255, 255, 5);
