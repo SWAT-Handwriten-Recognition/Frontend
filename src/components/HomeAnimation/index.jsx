@@ -3,7 +3,7 @@
  */
 import { useState, useEffect, useRef } from 'react'
 import DOTS from 'vanta/src/vanta.dots'
-import { BackgroundContainer, Title, TitleContainer } from './styled'
+import { BackgroundContainer, Title, TitleContainer, ScrollDown } from './styled'
 
 const HomeAnimation = () => {
   const [vantaEffect, setVantaEffect] = useState(0)
@@ -33,6 +33,7 @@ const HomeAnimation = () => {
       <TitleContainer>
         <Title>DeepSign</Title>
       </TitleContainer>
+      <ScrollDown>Scroll Down</ScrollDown>
     </BackgroundContainer>
   )
 }

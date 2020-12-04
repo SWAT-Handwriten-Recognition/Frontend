@@ -34,6 +34,18 @@ export const Title = styled.h2`
     font-size: 2.5rem;
   }
 `;
+
+export const ScrollDown = styled.small`
+  animation-name: ${TrackingInExpand};
+  animation-duration: 3s;
+  bottom: 2rem;
+  color: white;
+  right: 2rem;
+  position: absolute;
+  text-orientation: upright;
+  writing-mode: vertical-rl;
+`;
+
 export const TitleContainer = styled.div`
   align-items: center;
   display: flex;
