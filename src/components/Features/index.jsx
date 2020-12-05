@@ -1,11 +1,23 @@
 /**
  * Explain features to user
  */
+import {
+  FeaturesContainer,
+  Feature1,
+  Feature2,
+  Feature3,
+  Feature4
+} from './styled'
 
 const Features = () => {
 
   return (
-    <h1>Sign</h1>
+    <FeaturesContainer>
+      <Feature1 />
+      <Feature2 />
+      <Feature3 />
+      <Feature4 />
+    </FeaturesContainer>
   )
 }
 
