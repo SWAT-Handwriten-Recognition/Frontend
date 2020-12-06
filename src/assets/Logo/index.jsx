@@ -6,7 +6,7 @@ function Logo(props) {
   return (
     <svg
       width={300}
-      height={100}
+      height={70}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-22.522 7.986 545.045 134.028"
       style={{
