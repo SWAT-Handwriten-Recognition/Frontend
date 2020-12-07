@@ -6,7 +6,12 @@ export const FeaturesContainer = styled.div`
   justify-content: center;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  height: 100vh;
+  min-height: 100vh;
+
+  @media (max-width: 425px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
 `;
 
 const BaseFeatures = styled.div`
@@ -53,4 +58,16 @@ export const GifContainer = styled.div`
   display: flex;
   height: 80%;
   justify-content: center;
+
+  @media (max-width: 320px) {
+    height: 65%;
+  }
+
+  @media (max-width: 425px) {
+    height: 70%;
+  }
+
+  @media (max-width: 768px) {
+    height: 60%;
+  }
 `;
