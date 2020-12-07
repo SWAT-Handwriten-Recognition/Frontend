@@ -5,16 +5,19 @@ import Header from '../Header/index.jsx'
 import HomeAnimation from '../HomeAnimation/index.jsx'
 import Features from '../Features/index.jsx'
 import { useState } from 'react'
+import { Switch, Route } from 'react-router-dom'
 
 const App = () => {
   const [scroll, setScroll] = useState(false)
 
   return (
-    <>
-      <Header />
-      <HomeAnimation setScroll={setScroll} />
-      <Features scroll={scroll} />
-    </>
+    <Switch>
+      <Route path="/">
+        <Header />
+        <HomeAnimation setScroll={setScroll} />
+        <Features scroll={scroll} />
+      </Route>
+    </Switch>
   )
 }
 
