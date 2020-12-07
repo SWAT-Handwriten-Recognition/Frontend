@@ -6,7 +6,9 @@ import {
   Feature1,
   Feature2,
   Feature3,
-  Feature4
+  Feature4,
+  Text,
+  TextContainer,
 } from './styled'
 
 const Features = () => {
@@ -14,16 +16,32 @@ const Features = () => {
   return (
     <FeaturesContainer>
       <Feature1>
-        Step 1 → register
+        <TextContainer>
+          <Text>
+            Step 1 → register
+          </Text>
+        </TextContainer>
       </Feature1>
       <Feature2>
-        step 2 → upload your sign
+        <TextContainer>
+          <Text>
+            Step 2 → upload your sign
+          </Text>
+        </TextContainer>
       </Feature2>
       <Feature3>
-        step 3 → confirm your sign
+        <TextContainer>
+          <Text>
+            Step 3 → confirm your sign
+          </Text>
+        </TextContainer>
       </Feature3>
       <Feature4>
-        step 4 → enjoy the app
+        <TextContainer>
+          <Text>
+            Step 4 → enjoy the app
+          </Text>
+        </TextContainer>
       </Feature4>
     </FeaturesContainer>
   )
