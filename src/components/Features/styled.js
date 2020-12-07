@@ -10,14 +10,12 @@ export const FeaturesContainer = styled.div`
 `;
 
 const BaseFeatures = styled.div`
-  background-color: white;
-  box-shadow: inset 0 0 30px 0px rgba(255, 0, 0, .5);
+  background-image: linear-gradient(135deg, #fdfbfb 0%, #c3cfe2 100%);
   height: 80%;
   margin: auto;
   width: 80%;
 
   &:hover{
-    box-shadow: inset 0 0 30px 0px rgba(0, 0, 255, .5);
     transition: 2s;
   }
 `;
