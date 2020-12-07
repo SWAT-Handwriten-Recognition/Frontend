@@ -6,6 +6,9 @@ export const HeaderContainer = styled.header`
   display: flex;
   height: 20vh;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 
   @media (max-width:425px){
     flex-direction: column;

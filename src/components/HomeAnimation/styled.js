@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
 export const BackgroundContainer = styled.div`
-  height: 80vh;
+  height: 100vh;
 `;
 
 const TrackingInExpand = keyframes`
