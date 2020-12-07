@@ -14,6 +14,9 @@ import {
 } from './styled'
 
 import signUpGIF from '../../assets/Gif/signup.gif'
+import uploadGIF from '../../assets/Gif/upload.gif'
+import confrim from '../../assets/Gif/confirm.gif'
+import enjoy from '../../assets/Gif/enjoy.gif'
 
 const Features = () => {
 
@@ -22,7 +25,7 @@ const Features = () => {
       <Feature1>
         <TextContainer>
           <Text>
-            Step 1 → register
+            Step 1 → Sign Up
           </Text>
         </TextContainer>
         <GifContainer>
@@ -32,23 +35,32 @@ const Features = () => {
       <Feature2>
         <TextContainer>
           <Text>
-            Step 2 → upload your sign
+            Step 2 → Upload your sign
           </Text>
         </TextContainer>
+        <GifContainer>
+          <Gif src={uploadGIF} />
+        </GifContainer>
       </Feature2>
       <Feature3>
         <TextContainer>
           <Text>
-            Step 3 → confirm your sign
+            Step 3 → Confirm your sign
           </Text>
         </TextContainer>
+        <GifContainer>
+          <Gif src={confrim} />
+        </GifContainer>
       </Feature3>
       <Feature4>
         <TextContainer>
           <Text>
-            Step 4 → enjoy the app
+            Step 4 → Enjoy the app
           </Text>
         </TextContainer>
+        <GifContainer>
+          <Gif src={enjoy} />
+        </GifContainer>
       </Feature4>
     </FeaturesContainer>
   )

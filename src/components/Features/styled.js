@@ -49,5 +49,8 @@ export const Gif = styled.video`
 `;
 
 export const GifContainer = styled.div`
-  height: 100%;
+  align-items: center;
+  display: flex;
+  height: 80%;
+  justify-content: center;
 `;
