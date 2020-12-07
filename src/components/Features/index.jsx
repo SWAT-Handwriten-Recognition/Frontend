@@ -12,16 +12,23 @@ import {
   Gif,
   GifContainer
 } from './styled'
+import { useRef, useEffect } from 'react'
 
 import signUpGIF from '../../assets/Gif/signup.gif'
 import uploadGIF from '../../assets/Gif/upload.gif'
 import confrim from '../../assets/Gif/confirm.gif'
 import enjoy from '../../assets/Gif/enjoy.gif'
 
-const Features = () => {
+const Features = ({ scroll }) => {
+
+  const ref = useRef()
+
+  useEffect(() => {
+    ref?.current?.scrollIntoView()
+  }, [scroll])
 
   return (
-    <FeaturesContainer>
+    <FeaturesContainer ref={ref}>
       <Feature1>
         <TextContainer>
           <Text>

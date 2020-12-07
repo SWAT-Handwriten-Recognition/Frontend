@@ -4,14 +4,16 @@
 import Header from '../Header/index.jsx'
 import HomeAnimation from '../HomeAnimation/index.jsx'
 import Features from '../Features/index.jsx'
+import { useState } from 'react'
 
 const App = () => {
+  const [scroll, setScroll] = useState(false)
 
   return (
     <>
       <Header />
-      <HomeAnimation />
-      <Features />
+      <HomeAnimation setScroll={setScroll} />
+      <Features scroll={scroll} />
     </>
   )
 }

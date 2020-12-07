@@ -3,9 +3,14 @@
  */
 import { useState, useEffect, useRef } from 'react'
 import DOTS from 'vanta/src/vanta.dots'
-import { BackgroundContainer, Title, TitleContainer, ScrollDown } from './styled'
+import {
+  BackgroundContainer,
+  Title,
+  TitleContainer,
+  ScrollDown
+} from './styled'
 
-const HomeAnimation = () => {
+const HomeAnimation = ({ setScroll }) => {
   const [vantaEffect, setVantaEffect] = useState(0)
   const myRef = useRef(null)
   useEffect(() => {
@@ -28,12 +33,14 @@ const HomeAnimation = () => {
     }
   }, [vantaEffect])
 
+  const handleMouseEvent = () => setScroll(value => !value)
+
   return (
     <BackgroundContainer ref={myRef}>
       <TitleContainer>
         <Title>DeepSign</Title>
       </TitleContainer>
-      <ScrollDown>Scroll Down</ScrollDown>
+      <ScrollDown onMouseOver={handleMouseEvent}>Scroll Down</ScrollDown>
     </BackgroundContainer>
   )
 }

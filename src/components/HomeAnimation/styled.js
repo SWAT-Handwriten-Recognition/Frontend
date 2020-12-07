@@ -168,6 +168,7 @@ export const ScrollDown = styled.small`
   animation-duration: 5s;
   bottom: 2rem;
   color: white;
+  cursor: pointer;
   right: 2rem;
   position: absolute;
   text-orientation: upright;
