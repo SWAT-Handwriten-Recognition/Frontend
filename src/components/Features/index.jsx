@@ -28,8 +28,8 @@ const Features = ({ scroll }) => {
   }, [scroll])
 
   return (
-    <FeaturesContainer ref={ref}>
-      <Feature1>
+    <FeaturesContainer>
+      <Feature1 ref={ref}>
         <TextContainer>
           <Text>
             Step 1 → Sign Up

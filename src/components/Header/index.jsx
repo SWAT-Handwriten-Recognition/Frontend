@@ -12,8 +12,8 @@ const Header = () => {
         <Logo />
       </LogoContainer>
       <ButtonsContainer>
-        <Button>Sign in</Button>
-        <Button>Sign up</Button>
+        <Button>Sign In</Button>
+        <Button>Sign Up</Button>
       </ButtonsContainer>
     </HeaderContainer>
   )

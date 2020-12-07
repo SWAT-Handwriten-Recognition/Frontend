@@ -7,10 +7,10 @@ exports[`<Header /> matches the snap shot 1`] = `
   </styled__LogoContainer>
   <styled__ButtonsContainer>
     <styled__Button>
-      Sign in
+      Sign In
     </styled__Button>
     <styled__Button>
-      Sign up
+      Sign Up
     </styled__Button>
   </styled__ButtonsContainer>
 </styled__HeaderContainer>
