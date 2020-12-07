@@ -10,7 +10,6 @@ export const FeaturesContainer = styled.div`
 `;
 
 const BaseFeatures = styled.div`
-  background-image: linear-gradient(135deg, #fdfbfb 0%, #c3cfe2 100%);
   height: 80%;
   margin: auto;
   width: 80%;
@@ -29,14 +28,26 @@ export const Feature3 = styled(BaseFeatures)``;
 export const Feature4 = styled(BaseFeatures)``;
 
 export const Text = styled.h2`
-  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc,
-    0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc,
-    0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+  color: white;
 `;
 
 export const TextContainer = styled.div`
   align-items: center;
-  display:flex;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
   justify-content: center;
   padding: 1rem;
-`
+`;
+
+export const Gif = styled.video`
+  background-image: url(${(props) => props.src});
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
+export const GifContainer = styled.div`
+  height: 100%;
+`;

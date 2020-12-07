@@ -2,14 +2,13 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 const imgRules = {
-  test: /\.(jpg|png|svg|gif)$/,
-  use: {
-    loader: 'url-loader',
-    options: {
-      limit: 90000,
-    }
-  }
-}
+  test: /\.(png|jpe?g|gif)$/i,
+  use: [
+    {
+      loader: 'file-loader',
+    },
+  ],
+};
 
 const babelRules = {
   test: /\.(js|jsx)$/,
@@ -29,7 +28,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       title: 'Hand Written',
       template: './public/index.html',
-      favicon: './src/assets/Favicon/HW.png'
+      favicon: './src/assets/Favicon/HW.png',
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],

@@ -9,7 +9,11 @@ import {
   Feature4,
   Text,
   TextContainer,
+  Gif,
+  GifContainer
 } from './styled'
+
+import signUpGIF from '../../assets/Gif/signup.gif'
 
 const Features = () => {
 
@@ -21,6 +25,9 @@ const Features = () => {
             Step 1 → register
           </Text>
         </TextContainer>
+        <GifContainer>
+          <Gif src={signUpGIF} />
+        </GifContainer>
       </Feature1>
       <Feature2>
         <TextContainer>
