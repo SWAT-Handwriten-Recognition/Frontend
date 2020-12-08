@@ -28,7 +28,7 @@ const EmailAndPassword = ({ updateUser }) => {
               password_confirmation: confirmPassword
             })
 
-            history.push('/app')
+            history.push('/')
           } else {
             alert.error('Password mismatch')
           }

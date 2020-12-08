@@ -158,8 +158,10 @@ export const Title = styled.h2`
     letter-spacing: 0.5rem;
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 768px) {
     font-size: 2.5rem;
+    position: absolute;
+    bottom: 0;
   }
 `;
 
@@ -181,10 +183,6 @@ export const TitleContainer = styled.div`
   justify-content: center;
   height: 80%;
   width: 50%;
-
-  @media (max-width: 768px) {
-    align-items: flex-start;
-  }
 
   @media (max-width: 768px) {
     align-items: flex-start;
