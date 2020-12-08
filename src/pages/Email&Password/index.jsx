@@ -21,7 +21,13 @@ const EmailAndPassword = ({ updateUser }) => {
       if (email && password && confirmPassword) {
         console.log(RFC5322.test(email))
         if (RFC5322.test(email)) {
-          alert.success('yess')
+          if (password === confirmPassword) {
+            alert.success('yess dady')
+          } else {
+            alert.error('Password mismatch')
+          }
+        } else {
+          alert.error('Email invalid type')
         }
       } else {
         alert.error('All inputs need to be answered')
