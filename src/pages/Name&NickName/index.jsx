@@ -19,9 +19,9 @@ const NameAndNickName = ({ updateUser }) => {
     if (e.key === 'Enter') {
       if (firstName && lastName && nickname) {
         updateUser({
-          firstName,
-          lastName,
-          nickname
+          first_name: firstName,
+          last_name: lastName,
+          username: nickname
         })
 
         history.push('/signup/2')

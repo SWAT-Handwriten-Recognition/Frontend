@@ -1,10 +1,12 @@
+import { api, apiCall } from '../axios/request.js'
 let user;
 
 export const registerUser = (data) => async (dispatch) => {
   try {
-    user = await signup(data);
+    const usersRoute = apiCall('users')
+    user = await api.post(usersRoute('singup'), { data })
 
-    dispatch(getUser(user));
+    console.log(user)
   } catch (error) {
     alert(error);
   }

@@ -25,7 +25,7 @@ const EmailAndPassword = ({ updateUser }) => {
             updateUser({
               email,
               password,
-              confirmPassword
+              password_confirmation: confirmPassword
             })
 
             history.push('/app')
