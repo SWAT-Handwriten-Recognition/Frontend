@@ -22,7 +22,13 @@ const EmailAndPassword = ({ updateUser }) => {
         console.log(RFC5322.test(email))
         if (RFC5322.test(email)) {
           if (password === confirmPassword) {
-            alert.success('yess dady')
+            updateUser({
+              email,
+              password,
+              confirmPassword
+            })
+
+            history.push('/app')
           } else {
             alert.error('Password mismatch')
           }
@@ -79,11 +85,3 @@ const mapDispatchToProps = (dispatch) => ({
   updateUser: (user) => dispatch(setUser(user)),
 });
 export default connect(null, mapDispatchToProps)(EmailAndPassword);
-
-// updateUser({
-//   email,
-//   password,
-//   confirmPassword
-// })
-
-// history.push('/signup/2')
