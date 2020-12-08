@@ -4,11 +4,11 @@ import Features from '../../components/Features/index.jsx'
 import { useState } from 'react'
 
 const Home = () => {
-  const [scroll, setScroll] = useState(false)
+  const [scroll, setScroll] = useState(0)
 
   return (
     <>
-      <Header />
+      <Header scroll={scroll}/>
       <HomeAnimation setScroll={setScroll} />
       <Features scroll={scroll} />
     </>

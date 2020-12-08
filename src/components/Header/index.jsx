@@ -5,13 +5,13 @@ import { HeaderContainer, LogoContainer, ButtonsContainer, Button } from './styl
 import { useHistory } from 'react-router-dom'
 import Logo from '../../assets/Logo/index.jsx'
 
-const Header = () => {
+const Header = ({ scroll }) => {
   const history = useHistory()
 
   const handleSignUp = () => history.push('/signup')
 
   return (
-    <HeaderContainer>
+    <HeaderContainer scroll={scroll}>
       <LogoContainer>
         <Logo />
       </LogoContainer>

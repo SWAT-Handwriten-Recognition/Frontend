@@ -7,6 +7,7 @@ export const HeaderContainer = styled.header`
   height: 20vh;
   justify-content: space-between;
   position: fixed;
+  opacity: ${props => props.scroll > 0 ? 0.5 : 1};
   width: 100%;
   z-index: 1000;
 

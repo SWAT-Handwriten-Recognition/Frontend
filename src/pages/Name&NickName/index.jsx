@@ -6,6 +6,8 @@ import FOG from 'vanta/src/vanta.fog'
 import { BackgroundContainer, Container, Input, Text } from './styled.js'
 import { connect } from 'react-redux';
 import { setUser } from '../../utils/redux/actions.js'
+import { useHistory } from 'react-router-dom'
+import { useAlert } from 'react-alert';
 
 const NameAndNickName = ({ updateUser }) => {
   const [vantaEffect, setVantaEffect] = useState(0)
@@ -13,14 +15,22 @@ const NameAndNickName = ({ updateUser }) => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [nickname, setNickname] = useState('')
+  const history = useHistory()
+  const alert = useAlert();
 
   const handleOnKeyPress = (e) => {
     if (e.key === 'Enter') {
-      updateUser({
-        firstName,
-        lastName,
-        nickname
-      })
+      if (firstName && lastName && nickname) {
+        updateUser({
+          firstName,
+          lastName,
+          nickname
+        })
+
+        history.push('/users')
+      } else {
+        alert.error('All inputs need to be answered')
+      }
     }
   }
 

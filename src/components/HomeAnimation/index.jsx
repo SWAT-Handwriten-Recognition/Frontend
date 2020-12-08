@@ -33,7 +33,7 @@ const HomeAnimation = ({ setScroll }) => {
     }
   }, [vantaEffect])
 
-  const handleMouseEvent = () => setScroll(value => !value)
+  const handleMouseEvent = () => setScroll(value => value + 1)
 
   return (
     <BackgroundContainer ref={myRef}>
