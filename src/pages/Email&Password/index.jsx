@@ -6,7 +6,7 @@ import { setUser } from '../../utils/redux/actions.js'
 import { useHistory } from 'react-router-dom'
 import { useAlert } from 'react-alert';
 
-const NameAndNickName = ({ updateUser }) => {
+const EmailAndPassword = ({ updateUser }) => {
   const [vantaEffect, setVantaEffect] = useState(0)
   const myRef = useRef(null)
   const [firstName, setFirstName] = useState('')
@@ -75,4 +75,4 @@ const NameAndNickName = ({ updateUser }) => {
 const mapDispatchToProps = (dispatch) => ({
   updateUser: (user) => dispatch(setUser(user)),
 });
-export default connect(null, mapDispatchToProps)(NameAndNickName);
+export default connect(null, mapDispatchToProps)(EmailAndPassword);

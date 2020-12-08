@@ -4,6 +4,8 @@
 import { Switch, Route } from 'react-router-dom'
 import Home from '../../pages/Home/index.jsx'
 import NameAdnNickName from '../../pages/Name&NickName/index.jsx'
+import EmailAndPassword from '../../pages/Name&NickName/index.jsx'
+
 const App = () => {
 
   return (
@@ -12,10 +14,10 @@ const App = () => {
         <Home />
       </Route>
       <Route exact path="/signup/1">
-        <NameAdnNickName scroll={scroll} />
+        <NameAdnNickName />
       </Route>
       <Route exact path="/signup/2">
-        <NameAdnNickName scroll={scroll} />
+        <EmailAndPassword />
       </Route>
     </Switch>
   )
