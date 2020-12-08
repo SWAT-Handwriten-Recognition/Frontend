@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import FOG from 'vanta/src/vanta.fog'
+import WAVES from 'vanta/src/vanta.waves'
 import { BackgroundContainer, Container, Input, Text } from './styled.js'
 import { connect } from 'react-redux';
 import { setUser } from '../../utils/redux/actions.js'
@@ -9,22 +9,20 @@ import { useAlert } from 'react-alert';
 const EmailAndPassword = ({ updateUser }) => {
   const [vantaEffect, setVantaEffect] = useState(0)
   const myRef = useRef(null)
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [nickname, setNickname] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const history = useHistory()
   const alert = useAlert();
+  const RFC5322 = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
   const handleOnKeyPress = (e) => {
     if (e.key === 'Enter') {
-      if (firstName && lastName && nickname) {
-        updateUser({
-          firstName,
-          lastName,
-          nickname
-        })
-
-        history.push('/signup/2')
+      if (email && password && confirmPassword) {
+        console.log(RFC5322.test(email))
+        if (RFC5322.test(email)) {
+          alert.success('yess')
+        }
       } else {
         alert.error('All inputs need to be answered')
       }
@@ -33,18 +31,17 @@ const EmailAndPassword = ({ updateUser }) => {
 
   useEffect(() => {
     if (!vantaEffect) {
-      setVantaEffect(FOG({
+      setVantaEffect(WAVES({
         el: myRef.current,
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        highlightColor: 0xffffff,
-        midtoneColor: 0xffffff,
-        lowlightColor: 0xffffff,
-        baseColor: 0x0,
-        blurFactor: 0.1
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x0,
+        shininess: 17.00
       }))
     }
     return () => {
@@ -56,17 +53,17 @@ const EmailAndPassword = ({ updateUser }) => {
     <BackgroundContainer ref={myRef}>
       <Container onKeyPress={handleOnKeyPress}>
         <Text>
-          FirstName:
+          Email:
         </Text>
-        <Input value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+        <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <Text>
-          LastName:
+          Password:
         </Text>
-        <Input value={lastName} onChange={(e) => setLastName(e.target.value)} />
+        <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <Text>
-          Nickname:
+          Confirm Your Password:
         </Text>
-        <Input value={nickname} onChange={(e) => setNickname(e.target.value)} />
+        <Input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
       </Container>
     </BackgroundContainer>
   )
@@ -76,3 +73,11 @@ const mapDispatchToProps = (dispatch) => ({
   updateUser: (user) => dispatch(setUser(user)),
 });
 export default connect(null, mapDispatchToProps)(EmailAndPassword);
+
+// updateUser({
+//   email,
+//   password,
+//   confirmPassword
+// })
+
+// history.push('/signup/2')

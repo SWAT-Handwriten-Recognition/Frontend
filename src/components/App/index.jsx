@@ -4,7 +4,7 @@
 import { Switch, Route } from 'react-router-dom'
 import Home from '../../pages/Home/index.jsx'
 import NameAdnNickName from '../../pages/Name&NickName/index.jsx'
-import EmailAndPassword from '../../pages/Name&NickName/index.jsx'
+import EmailAndPassword from '../../pages/Email&Password/index.jsx'
 
 const App = () => {
 
