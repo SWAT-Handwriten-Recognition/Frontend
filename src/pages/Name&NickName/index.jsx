@@ -2,23 +2,42 @@
  * Home dots animation
  */
 import { useState, useEffect, useRef } from 'react'
-import BIRDS from 'vanta/src/vanta.birds'
+import FOG from 'vanta/src/vanta.fog'
 import { BackgroundContainer, Container, Input, Text } from './styled.js'
+import { connect } from 'react-redux';
+import { setUser } from '../../utils/redux/actions.js'
 
-const NameAdnNickName = ({ setScroll }) => {
+const NameAndNickName = ({ updateUser }) => {
   const [vantaEffect, setVantaEffect] = useState(0)
   const myRef = useRef(null)
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [nickname, setNickname] = useState('')
+
+  const handleOnKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      updateUser({
+        firstName,
+        lastName,
+        nickname
+      })
+    }
+  }
+
   useEffect(() => {
     if (!vantaEffect) {
-      setVantaEffect(BIRDS({
+      setVantaEffect(FOG({
         el: myRef.current,
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00
+        highlightColor: 0xffffff,
+        midtoneColor: 0xffffff,
+        lowlightColor: 0xffffff,
+        baseColor: 0x0,
+        blurFactor: 0.1
       }))
     }
     return () => {
@@ -28,18 +47,25 @@ const NameAdnNickName = ({ setScroll }) => {
 
   return (
     <BackgroundContainer ref={myRef}>
-      <Container>
+      <Container onKeyPress={handleOnKeyPress}>
         <Text>
-          Name:
+          FirstName:
         </Text>
-        <Input />
+        <Input value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+        <Text>
+          LastName:
+        </Text>
+        <Input value={lastName} onChange={(e) => setLastName(e.target.value)} />
         <Text>
           Nickname:
         </Text>
-        <Input />
+        <Input value={nickname} onChange={(e) => setNickname(e.target.value)} />
       </Container>
     </BackgroundContainer>
   )
 }
 
-export default NameAdnNickName;
+const mapDispatchToProps = (dispatch) => ({
+  updateUser: (user) => dispatch(setUser(user)),
+});
+export default connect(null, mapDispatchToProps)(NameAndNickName);
