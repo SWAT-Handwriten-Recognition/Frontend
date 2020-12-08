@@ -21,8 +21,6 @@ import enjoy from '../../assets/Gif/enjoy.gif'
 
 const Features = ({ scroll }) => {
 
-  console.log(scroll)
-
   const ref = useRef()
 
   useEffect(() => {

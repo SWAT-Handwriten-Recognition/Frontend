@@ -27,7 +27,7 @@ const NameAndNickName = ({ updateUser }) => {
           nickname
         })
 
-        history.push('/users')
+        history.push('/signup/2')
       } else {
         alert.error('All inputs need to be answered')
       }

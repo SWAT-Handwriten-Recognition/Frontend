@@ -11,7 +11,10 @@ const App = () => {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/signup">
+      <Route exact path="/signup/1">
+        <NameAdnNickName scroll={scroll} />
+      </Route>
+      <Route exact path="/signup/2">
         <NameAdnNickName scroll={scroll} />
       </Route>
     </Switch>

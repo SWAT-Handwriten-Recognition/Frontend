@@ -48,7 +48,7 @@ export const Input = styled.input`
   width: 80%;
 
   &:focus {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 0px 2px red;
     color: black;
   }

@@ -8,7 +8,7 @@ import Logo from '../../assets/Logo/index.jsx'
 const Header = ({ scroll }) => {
   const history = useHistory()
 
-  const handleSignUp = () => history.push('/signup')
+  const handleSignUp = () => history.push('/signup/1')
 
   return (
     <HeaderContainer scroll={scroll}>
