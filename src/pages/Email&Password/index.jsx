@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import WAVES from 'vanta/src/vanta.waves'
 import { BackgroundContainer, Container, Input, Text } from './styled.js'
 import { connect } from 'react-redux';
-import { setUser } from '../../utils/redux/actions.js'
+import { setLocalUser } from '../../utils/redux/actions.js'
 import { useHistory } from 'react-router-dom'
 import { useAlert } from 'react-alert';
 
@@ -82,6 +82,6 @@ const EmailAndPassword = ({ updateUser }) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  updateUser: (user) => dispatch(setUser(user)),
+  updateUser: (user) => dispatch(setLocalUser(user)),
 });
 export default connect(null, mapDispatchToProps)(EmailAndPassword);
