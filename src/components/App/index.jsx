@@ -1,10 +1,9 @@
 /**
  * App component, root of the application.
  */
-import Features from '../Features/index.jsx'
 import { Switch, Route } from 'react-router-dom'
 import Home from '../../pages/Home/index.jsx'
-
+import NameAdnNickName from '../../pages/Name&NickName/index.jsx'
 const App = () => {
 
   return (
@@ -13,7 +12,7 @@ const App = () => {
         <Home />
       </Route>
       <Route exact path="/signup">
-        <Features scroll={scroll} />
+        <NameAdnNickName scroll={scroll} />
       </Route>
     </Switch>
   )
