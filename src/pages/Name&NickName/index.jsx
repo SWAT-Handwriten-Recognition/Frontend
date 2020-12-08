@@ -3,7 +3,7 @@
  */
 import { useState, useEffect, useRef } from 'react'
 import BIRDS from 'vanta/src/vanta.birds'
-import { BackgroundContainer, Container, Input } from './styled.js'
+import { BackgroundContainer, Container, Input, Text } from './styled.js'
 
 const NameAdnNickName = ({ setScroll }) => {
   const [vantaEffect, setVantaEffect] = useState(0)
@@ -29,6 +29,13 @@ const NameAdnNickName = ({ setScroll }) => {
   return (
     <BackgroundContainer ref={myRef}>
       <Container>
+        <Text>
+          Name:
+        </Text>
+        <Input />
+        <Text>
+          Nickname:
+        </Text>
         <Input />
       </Container>
     </BackgroundContainer>

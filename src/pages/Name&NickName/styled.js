@@ -24,11 +24,12 @@ export const Container = styled.div`
   animation-duration: 2s;
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 50%;
   width: 50%;
 
-  @media (max-width:425px){
+  @media (max-width: 425px) {
     width: 80%;
   }
 `;
@@ -38,7 +39,7 @@ export const Input = styled.input`
   border-style: hidden;
   border-radius: 16px;
   box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
-  background: rgba(255, 255, 255, .1);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
   padding: 10px;
@@ -47,12 +48,19 @@ export const Input = styled.input`
   width: 80%;
 
   &:focus {
-        background: rgba(255, 255, 255, .7);
-        box-shadow: 0px 0px 2px red;
-        color: black;
-    }
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 2px red;
+    color: black;
+  }
 
-  @media (max-width:320px){
+  @media (max-width: 320px) {
     width: 100%;
   }
+`;
+
+export const Text = styled.h4`
+  color: white;
+  font-size: 2rem;
+  text-shadow: 0 0 18px rgba(0, 0, 0, 0.35);
+  padding: 1rem;
 `;
