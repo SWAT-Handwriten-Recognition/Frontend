@@ -9,7 +9,9 @@ exports[`<Header /> matches the snap shot 1`] = `
     <styled__Button>
       Sign In
     </styled__Button>
-    <styled__Button>
+    <styled__Button
+      onClick={[Function]}
+    >
       Sign Up
     </styled__Button>
   </styled__ButtonsContainer>
