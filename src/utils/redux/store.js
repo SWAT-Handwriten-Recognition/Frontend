@@ -7,8 +7,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { localUser, user } from './reducers.js'
 
 const reducers = {
-  localUser: localUser,
-  user: user
+  localUser,
+  user
 };
 
 const persistConfig = {
