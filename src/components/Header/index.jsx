@@ -1,13 +1,14 @@
 /**
  * This is header component show user login or sign up option
  */
-import { HeaderContainer, LogoContainer, ButtonsContainer, Button, InfoContainer, UserInfo } from './styled'
+import { HeaderContainer, LogoContainer, ButtonsContainer, Button, InfoContainer, UserInfo, Info } from './styled'
 import { useHistory } from 'react-router-dom'
 import Logo from '../../assets/Logo/index.jsx'
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { resetUser } from '../../utils/redux/actions.js'
 
-const Header = ({ scroll, normal, user }) => {
+const Header = ({ scroll, normal, user, reset }) => {
   const history = useHistory()
   const [thereIsUser, setThereIsUser] = useState(false)
 
@@ -15,7 +16,10 @@ const Header = ({ scroll, normal, user }) => {
 
   const handleSignIn = () => history.push('/signin')
 
-  const handleLogout = () => {}
+  const handleLogout = () => {
+    history.push('/')
+    reset()
+  }
 
   useEffect(() => {
     if (user) {
@@ -35,7 +39,7 @@ const Header = ({ scroll, normal, user }) => {
       {thereIsUser ?
         <InfoContainer>
           <UserInfo>
-            <Button>Welcome {user?.status?.username}</Button>
+            <Info>Welcome {user?.status?.username}</Info>
             <Button onClick={handleLogout}>Logout</Button>
           </UserInfo>
         </InfoContainer> :
@@ -52,4 +56,8 @@ const mapStateToProps = (state) => ({
   user: state.user,
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = (dispatch) => ({
+  reset: () => dispatch(resetUser()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
