@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import FOG from 'vanta/src/vanta.fog';
+import NET from 'vanta/src/vanta.net';
 import { BackgroundContainer, Container, Input, Text } from './styled.js';
 import { connect } from 'react-redux';
 import { setLocalUser } from '../../utils/redux/actions.js';
@@ -26,18 +26,17 @@ const SignUp = ({ updateUser }) => {
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
-        FOG({
+        NET({
           el: myRef.current,
           mouseControls: true,
           touchControls: true,
           gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          highlightColor: 0xffffff,
-          midtoneColor: 0xffffff,
-          lowlightColor: 0xffffff,
-          baseColor: 0x0,
-          blurFactor: 0.1,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0xff0d5b,
+          backgroundColor: 0x0
         })
       );
     }

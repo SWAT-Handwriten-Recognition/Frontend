@@ -78,7 +78,7 @@ export const Input = styled.input`
   border-style: hidden;
   border-radius: 16px;
   box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   border: none;
   color: white;
   padding: 10px;
