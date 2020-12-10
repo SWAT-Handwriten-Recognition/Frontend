@@ -17,7 +17,7 @@ const persistor = persistStore(store);
 
 const options = {
   timeout: 5000,
-  position: positions.TOP_CENTER
+  position: positions.MIDDLE
 };
 
 render(
