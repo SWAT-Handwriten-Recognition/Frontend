@@ -1,3 +1,5 @@
+import { setUser } from '../../utils/redux/actions.js';
+
 async function postData(url = '', data = {}) {
   // Opciones por defecto estan marcadas con un *
   const response = await fetch(url, {
@@ -18,9 +20,9 @@ async function postData(url = '', data = {}) {
 
 export const registerUser = (data) => async (dispatch) => {
   try {
-    postData('https://api.jonastronco.xyz/users/signup/', data).then((data) => {
-      console.log(data); // JSON data parsed by `data.json()` call
-    });
+    postData('https://api.jonastronco.xyz/users/signup/', data).then((data) =>
+      dispatch(setUser(data))
+    );
   } catch (error) {
     alert(error);
   }

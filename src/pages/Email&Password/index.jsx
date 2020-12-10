@@ -19,7 +19,6 @@ const EmailAndPassword = ({ updateUser }) => {
   const handleOnKeyPress = (e) => {
     if (e.key === 'Enter') {
       if (email && password && confirmPassword) {
-        console.log(RFC5322.test(email))
         if (RFC5322.test(email)) {
           if (password === confirmPassword) {
             updateUser({

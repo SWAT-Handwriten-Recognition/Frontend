@@ -3,7 +3,7 @@
  */
 import { Switch, Route } from 'react-router-dom'
 import Home from '../../pages/Home/index.jsx'
-import NameAdnNickName from '../../pages/Name&NickName/index.jsx'
+import SignUp from '../../pages/SignUp/index.jsx'
 import EmailAndPassword from '../../pages/Email&Password/index.jsx'
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
         <Home />
       </Route>
       <Route exact path="/signup/1">
-        <NameAdnNickName />
+        <SignUp />
       </Route>
       <Route exact path="/signup/2">
         <EmailAndPassword />
