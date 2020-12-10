@@ -4,7 +4,6 @@
 import { Switch, Route } from 'react-router-dom'
 import Home from '../../pages/Home/index.jsx'
 import SignUp from '../../pages/SignUp/index.jsx'
-import EmailAndPassword from '../../pages/Email&Password/index.jsx'
 
 const App = () => {
 
@@ -13,11 +12,8 @@ const App = () => {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/signup/1">
+      <Route exact path="/signup">
         <SignUp />
-      </Route>
-      <Route exact path="/signup/2">
-        <EmailAndPassword />
       </Route>
     </Switch>
   )
