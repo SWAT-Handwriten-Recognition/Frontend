@@ -6,7 +6,7 @@ import Header from '../../components/Header/index.jsx';
 const Application = () => {
   return (
     <>
-      <Header />
+      <Header normal={true}/>
       <h1>Im the app</h1>
     </>
   );

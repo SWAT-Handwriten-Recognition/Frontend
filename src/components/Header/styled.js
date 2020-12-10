@@ -6,12 +6,12 @@ export const HeaderContainer = styled.header`
   display: flex;
   height: 20vh;
   justify-content: space-between;
-  position: fixed;
-  opacity: ${props => props.scroll > 0 ? 0.5 : 1};
+  position: ${(props) => (props.normal === true ? 'initial' : 'fixed')};
+  opacity: ${(props) => (props.scroll > 0 ? 0.5 : 1)};
   width: 100%;
   z-index: 1000;
 
-  @media (max-width:425px){
+  @media (max-width: 425px) {
     flex-direction: column;
     height: 30vh;
   }
@@ -47,7 +47,7 @@ export const Button = styled.button`
   font-size: 17px;
   padding: 7px 25px;
   text-decoration: none;
-  transition: .3s;
+  transition: 0.3s;
 
   &:hover {
     background: linear-gradient(
