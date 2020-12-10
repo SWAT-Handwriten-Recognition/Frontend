@@ -63,3 +63,23 @@ export const Button = styled.button`
     top: 1px;
   }
 `;
+
+export const InfoContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  flex-direction: column;
+  width: 20%;
+
+  @media (max-width: 1024px) {
+    width: 30%;
+  }
+  @media (max-width: 425px) {
+    width: 70%;
+  }
+`;
+
+export const UserInfo = styled.small`
+  color: white;
+`;

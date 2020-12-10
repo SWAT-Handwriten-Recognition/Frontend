@@ -1,7 +1,7 @@
 /**
  * This is header component show user login or sign up option
  */
-import { HeaderContainer, LogoContainer, ButtonsContainer, Button } from './styled'
+import { HeaderContainer, LogoContainer, ButtonsContainer, Button, InfoContainer, UserInfo } from './styled'
 import { useHistory } from 'react-router-dom'
 import Logo from '../../assets/Logo/index.jsx'
 import { connect } from 'react-redux';
@@ -15,7 +15,7 @@ const Header = ({ scroll, normal, user }) => {
 
   const handleSignIn = () => history.push('/signin')
 
-  console.log(thereIsUser)
+  const handleLogout = () => {}
 
   useEffect(() => {
     if (user) {
@@ -32,11 +32,19 @@ const Header = ({ scroll, normal, user }) => {
       <LogoContainer>
         <Logo />
       </LogoContainer>
-      <ButtonsContainer>
-        <Button onClick={handleSignIn}>Sign In</Button>
-        <Button onClick={handleSignUp}>Sign Up</Button>
-      </ButtonsContainer>
-    </HeaderContainer>
+      {thereIsUser ?
+        <InfoContainer>
+          <UserInfo>
+            <Button>Welcome {user?.status?.username}</Button>
+            <Button onClick={handleLogout}>Logout</Button>
+          </UserInfo>
+        </InfoContainer> :
+        <ButtonsContainer>
+          <Button onClick={handleSignIn}>Sign In</Button>
+          <Button onClick={handleSignUp}>Sign Up</Button>
+        </ButtonsContainer>
+      }
+    </HeaderContainer >
   )
 }
 
