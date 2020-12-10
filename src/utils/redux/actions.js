@@ -7,6 +7,11 @@ export const setLocalUser = (user) => ({
   payload: user,
 });
 
+export const RESET_LOCAL_USER = 'RESET_LOCAL_USER';
+export const resetLocalUser = () => ({
+  type: RESET_LOCAL_USER,
+});
+
 export const SET_USER = 'SET_USER';
 export const setUser = (user) => ({
   type: SET_USER,

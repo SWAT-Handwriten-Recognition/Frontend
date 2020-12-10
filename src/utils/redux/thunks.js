@@ -1,4 +1,4 @@
-import { setUser } from '../../utils/redux/actions.js';
+import { setUser, resetLocalUser } from '../../utils/redux/actions.js';
 
 async function postData(url = '', data = {}) {
   // Opciones por defecto estan marcadas con un *
@@ -20,9 +20,12 @@ async function postData(url = '', data = {}) {
 
 export const registerUser = (data) => async (dispatch) => {
   try {
-    postData('https://api.jonastronco.xyz/users/signup/', data).then((data) =>
-      dispatch(setUser(data))
-    );
+    const response = await postData(
+      'https://api.jonastronco.xyz/users/signup/',
+      data
+    ).then((data) => dispatch(setUser(data)));
+
+    if (response) dispatch(resetLocalUser());
   } catch (error) {
     alert(error);
   }

@@ -11,7 +11,7 @@ const Home = ({ localUser, register, reset }) => {
 
   useEffect(() => {
     localUser && register(localUser)
-  }, [localUser])
+  }, [])
 
   return (
     <>
