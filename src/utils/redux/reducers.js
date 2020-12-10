@@ -1,7 +1,12 @@
 /**
  * redux reduce to handle data
  */
-import { SET_LOCAL_USER, SET_USER, RESET_LOCAL_USER } from './actions';
+import {
+  SET_LOCAL_USER,
+  SET_USER,
+  RESET_LOCAL_USER,
+  RESET_USER,
+} from './actions';
 
 const initialState = null;
 
@@ -32,6 +37,10 @@ export const user = (state = initialState, action) => {
       const user = payload;
 
       return { ...state, ...user };
+    }
+
+    case RESET_USER: {
+      return null;
     }
 
     default:
