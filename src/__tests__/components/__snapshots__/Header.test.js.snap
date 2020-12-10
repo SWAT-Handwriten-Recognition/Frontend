@@ -1,21 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Header /> matches the snap shot 1`] = `
-<styled__HeaderContainer>
-  <styled__LogoContainer>
-    <Logo />
-  </styled__LogoContainer>
-  <styled__ButtonsContainer>
-    <styled__Button
-      onClick={[Function]}
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <PersistGate
+    loading={
+      <div>
+        Loading...
+      </div>
+    }
+    persistor={
+      Object {
+        "dispatch": [Function],
+        "flush": [Function],
+        "getState": [Function],
+        "pause": [Function],
+        "persist": [Function],
+        "purge": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <HashRouter
+      basename="/"
     >
-      Sign In
-    </styled__Button>
-    <styled__Button
-      onClick={[Function]}
-    >
-      Sign Up
-    </styled__Button>
-  </styled__ButtonsContainer>
-</styled__HeaderContainer>
+      <Header />
+    </HashRouter>
+  </PersistGate>
+</ContextProvider>
 `;
