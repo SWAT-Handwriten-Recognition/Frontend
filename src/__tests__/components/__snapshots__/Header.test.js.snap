@@ -53,7 +53,7 @@ exports[`<Header /> matches the snap shot 1`] = `
     <HashRouter
       basename="/"
     >
-      <Header />
+      <Connect(Header) />
     </HashRouter>
   </PersistGate>
 </ContextProvider>
