@@ -48,6 +48,7 @@ export const Button = styled.button`
   padding: 7px 25px;
   text-decoration: none;
   transition: 0.3s;
+  margin-right: .5rem;
 
   &:hover {
     background: linear-gradient(
@@ -67,16 +68,17 @@ export const Button = styled.button`
 export const InfoContainer = styled.div`
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1.5rem;
-  flex-direction: column;
-  width: 20%;
+  width:25%;
 
   @media (max-width: 1024px) {
-    width: 30%;
+    width: 100%;
   }
   @media (max-width: 425px) {
-    width: 70%;
+    justify-content: center;
+    padding: .5rem;
+    width:100%;
   }
 `;
 
