@@ -6,7 +6,9 @@ exports[`<Header /> matches the snap shot 1`] = `
     <Logo />
   </styled__LogoContainer>
   <styled__ButtonsContainer>
-    <styled__Button>
+    <styled__Button
+      onClick={[Function]}
+    >
       Sign In
     </styled__Button>
     <styled__Button

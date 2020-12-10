@@ -10,13 +10,15 @@ const Header = ({ scroll }) => {
 
   const handleSignUp = () => history.push('/signup')
 
+  const handleSignIn = () => history.push('/signin')
+
   return (
     <HeaderContainer scroll={scroll}>
       <LogoContainer>
         <Logo />
       </LogoContainer>
       <ButtonsContainer>
-        <Button>Sign In</Button>
+        <Button onClick={handleSignIn}>Sign In</Button>
         <Button onClick={handleSignUp}>Sign Up</Button>
       </ButtonsContainer>
     </HeaderContainer>
