@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from '../../pages/Home/index.jsx'
 import SignUp from '../../pages/SignUp/index.jsx'
 import SignIn from '../../pages/SignIn/index.jsx'
+import { connect } from 'react-redux';
 
 const App = () => {
 
@@ -23,4 +24,8 @@ const App = () => {
   )
 }
 
-export default App
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+export default connect(mapStateToProps)(App);

@@ -4,7 +4,7 @@ import Features from '../../components/Features/index.jsx';
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { registerUser } from '../../utils/redux/thunks.js';
-import { setLocalUser, resetUser} from '../../utils/redux/actions.js';
+import { resetUser} from '../../utils/redux/actions.js';
 import { useAlert } from 'react-alert';
 
 const Home = ({ localUser, register, user, reset }) => {

@@ -30,3 +30,16 @@ export const registerUser = (data) => async (dispatch) => {
     alert(error);
   }
 };
+
+export const signinUser = (data) => async (dispatch) => {
+  try {
+    const response = await postData(
+      'https://api.jonastronco.xyz/users/login/',
+      data
+    ).then((data) => dispatch(setUser(data)));
+
+    console.log(await response)
+  } catch (error) {
+    alert(error);
+  }
+};
