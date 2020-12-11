@@ -39,6 +39,7 @@ const Application = ({ user, getSignatures }) => {
   useEffect(() => {
     if (error) {
       alert.error(error)
+      setError(null)
     }
   }, [error])
 
