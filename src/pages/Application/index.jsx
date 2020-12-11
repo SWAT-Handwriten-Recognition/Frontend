@@ -22,7 +22,7 @@ const Application = ({ user, getSignatures, upload }) => {
   const [isCompleted, setIsCompleted] = useState(false);
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
-  const [isConfirm, setIsConfirm] = useState(true);
+  const [isConfirm, setIsConfirm] = useState(false);
   const types = ['image/png', 'image/jpeg'];
   const alert = useAlert();
 
@@ -40,8 +40,7 @@ const Application = ({ user, getSignatures, upload }) => {
   };
 
   const handleOnclick = async () => {
-    const result = await upload({ token: user?.token, file, username: user?.status?.username });
-    console.log(result)
+    await upload({ token: user?.token, file, username: user?.status?.username });
   };
 
   useEffect(() => {
@@ -72,7 +71,11 @@ const Application = ({ user, getSignatures, upload }) => {
             </GifContainer>
             <ImageInput type="file" onChange={changeHandler} />
             <ImageName>{file?.name}</ImageName>
-            <UploadButton disabled={file === null} onClick={handleOnclick}>Confirm</UploadButton>
+            <UploadButton disabled={file === null} onClick={() => {
+              handleOnclick()
+              setIsCompleted(bool => bool = true)
+            }}
+            >Confirm</UploadButton>
           </ImageInputContainer> :
           <ImageInputContainer>
             <Title>Please upload your sign</Title>
@@ -81,6 +84,11 @@ const Application = ({ user, getSignatures, upload }) => {
             </GifContainer>
             <ImageInput type="file" onChange={changeHandler} />
             <ImageName>{file?.name}</ImageName>
+            <UploadButton disabled={file === null} onClick={() => {
+              handleOnclick()
+              setIsConfirm(bool => bool = true)
+            }}
+            >Upload</UploadButton>
           </ImageInputContainer>
       )}
     </>
