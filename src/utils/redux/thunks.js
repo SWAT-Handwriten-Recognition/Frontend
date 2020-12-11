@@ -54,22 +54,17 @@ export const getSigns = ({ status, token }) => async (dispatch) => {
   }
 };
 
-export const uploadSignature = ({ token, file, username }) => async (dispatch) => {
+export const uploadSignature = ({ token, file, username }) => async (
+  dispatch
+) => {
   try {
-
-    console.log(token, file, username)
+    console.log(token, file, username);
 
     const myHeaders = new Headers();
-    myHeaders.append(
-      'Authorization',
-      `token ${token}`
-    );
+    myHeaders.append('Authorization', `token ${token}`);
 
     const formdata = new FormData();
-    formdata.append(
-      'picture',
-      file,
-    );
+    formdata.append('picture', file);
     formdata.append('username', `${username}`);
 
     const requestOptions = {
@@ -79,10 +74,12 @@ export const uploadSignature = ({ token, file, username }) => async (dispatch) =
       redirect: 'follow',
     };
 
-    fetch('https://api.jonastronco.xyz/signatures/', requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log('error', error));
+    const result = await fetch(
+      'https://api.jonastronco.xyz/signatures/',
+      requestOptions
+    ).catch((error) => console.log('error', error));
+
+    return result
   } catch (error) {
     alert(error);
   }

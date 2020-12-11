@@ -54,7 +54,6 @@ const Application = ({ user, getSignatures, upload }) => {
         <ImageInputContainer>
           <ImageInput type="file" onChange={changeHandler} />
           <ImageName>{file?.name}</ImageName>
-          <button onClick={handleOnclick}>Test</button>
         </ImageInputContainer>
       }
     </>
