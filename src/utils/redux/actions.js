@@ -22,3 +22,9 @@ export const RESET_USER = 'RESET_USER';
 export const resetUser = () => ({
   type: RESET_USER,
 });
+
+export const GET_SIGNATURES = 'GET_SIGNATURES';
+export const getSignatures = (data) => ({
+  type: GET_SIGNATURES,
+  payload: data
+});

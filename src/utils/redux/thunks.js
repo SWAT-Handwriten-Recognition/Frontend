@@ -1,4 +1,8 @@
-import { setUser, resetLocalUser } from '../../utils/redux/actions.js';
+import {
+  setUser,
+  resetLocalUser,
+  getSignatures,
+} from '../../utils/redux/actions.js';
 
 async function postData(url = '', data = {}) {
   // Opciones por defecto estan marcadas con un *
@@ -38,7 +42,23 @@ export const signinUser = (data) => async (dispatch) => {
       data
     ).then((data) => dispatch(setUser(data)));
 
-    console.log(await response)
+    console.log(await response);
+  } catch (error) {
+    alert(error);
+  }
+};
+
+export const getSigns = ({ status, token }) => async (dispatch) => {
+  try {
+    const response = await postData('https://api.jonastronco.xyz/signatures/', {
+      headers: {
+        Authorization: token,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: token,
+    }).then(() => dispatch(getSignatures(status?.username)));
+
+    console.log(await response);
   } catch (error) {
     alert(error);
   }

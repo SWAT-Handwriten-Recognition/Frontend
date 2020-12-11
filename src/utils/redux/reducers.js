@@ -6,6 +6,7 @@ import {
   SET_USER,
   RESET_LOCAL_USER,
   RESET_USER,
+  GET_SIGNATURES
 } from './actions';
 
 const initialState = null;
@@ -41,6 +42,12 @@ export const user = (state = initialState, action) => {
 
     case RESET_USER: {
       return null;
+    }
+
+    case GET_SIGNATURES: {
+      const signatures = payload;
+
+      return { ...state, status: { ...state?.status , signatures } };
     }
 
     default:

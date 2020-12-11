@@ -19,6 +19,7 @@ const Home = ({ localUser, register, user, reset }) => {
     if (user) {
       if (Object.keys(user).length === 4) {
         alert.success('successfully registered user, you can sign in');
+        reset();
       } else {
         reset();
       }
