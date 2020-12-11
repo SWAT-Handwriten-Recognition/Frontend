@@ -11,7 +11,8 @@ import {
   ImageName,
   Title,
   Gif,
-  GifContainer
+  GifContainer,
+  UploadButton
 } from './styled.js';
 import { useAlert } from 'react-alert';
 import upload1 from '../../assets/Gif/upload1.gif'
@@ -70,6 +71,7 @@ const Application = ({ user, getSignatures, upload }) => {
             </GifContainer>
             <ImageInput type="file" onChange={changeHandler} />
             <ImageName>{file?.name}</ImageName>
+            <UploadButton>Confirm</UploadButton>
           </ImageInputContainer> :
           <ImageInputContainer>
             <Title>Please upload your sign</Title>
