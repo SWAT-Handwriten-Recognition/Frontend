@@ -5,12 +5,29 @@ import Header from '../../components/Header/index.jsx';
 import { getSigns } from '../../utils/redux/thunks.js'
 import { connect } from 'react-redux'
 import { useEffect, useState } from 'react';
+import { ImageInput, ImageInputContainer } from './styled.js'
+import { useAlert } from 'react-alert'
 
 const Application = ({ user, getSignatures }) => {
 
   const [isCompleted, setIsCompleted] = useState(false)
+  const [file, setFile] = useState(null)
+  const [error, setError] = useState(null)
+  const types = ['image/png', 'image/jpeg']
+  const alert = useAlert();
 
   const checkSignatures = () => getSignatures(user)
+
+  const changeHandler = (e) => {
+    const selected = e?.target?.files[0]
+
+    if (selected && types.includes(selected?.type)) {
+      setFile(selected)
+    } else {
+      setFile(null)
+      setError('Please select an image file (png or jpeg)')
+    }
+  }
 
   useEffect(() => {
     checkSignatures()
@@ -19,12 +36,22 @@ const Application = ({ user, getSignatures }) => {
     }
   }, [])
 
-  console.log(isCompleted)
+  useEffect(() => {
+    if (error) {
+      alert.error(error)
+    }
+  }, [error])
+
+  console.log(file)
 
   return (
     <>
       <Header normal={true} />
-      {isCompleted ? <h1>is completed</h1> : <h1>Is not completed</h1>}
+      {isCompleted ? <h1>is completed</h1> :
+        <ImageInputContainer>
+          <ImageInput type="file" onChange={changeHandler} />
+        </ImageInputContainer>
+      }
     </>
   );
 };
