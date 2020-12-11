@@ -2,13 +2,13 @@
  * Application
  */
 import Header from '../../components/Header/index.jsx';
-import { getSigns } from '../../utils/redux/thunks.js'
+import { getSigns, uploadSignature } from '../../utils/redux/thunks.js'
 import { connect } from 'react-redux'
 import { useEffect, useState } from 'react';
 import { ImageInput, ImageInputContainer, ImageName } from './styled.js'
 import { useAlert } from 'react-alert'
 
-const Application = ({ user, getSignatures }) => {
+const Application = ({ user, getSignatures, upload }) => {
 
   const [isCompleted, setIsCompleted] = useState(false)
   const [file, setFile] = useState(null)
@@ -29,6 +29,10 @@ const Application = ({ user, getSignatures }) => {
     }
   }
 
+  const handleOnclick = () => {
+    upload({ token: user?.token, file, username: user?.status?.username })
+  }
+
   useEffect(() => {
     checkSignatures()
     if (user?.status?.signatures?.length !== 0) {
@@ -43,8 +47,6 @@ const Application = ({ user, getSignatures }) => {
     }
   }, [error])
 
-  console.log(file)
-
   return (
     <>
       <Header normal={true} />
@@ -52,6 +54,7 @@ const Application = ({ user, getSignatures }) => {
         <ImageInputContainer>
           <ImageInput type="file" onChange={changeHandler} />
           <ImageName>{file?.name}</ImageName>
+          <button onClick={handleOnclick}>Test</button>
         </ImageInputContainer>
       }
     </>
@@ -64,6 +67,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getSignatures: (data) => dispatch(getSigns(data)),
+  upload: ({ token, file, username }) => dispatch(uploadSignature({ token, file, username }))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Application);

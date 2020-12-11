@@ -53,3 +53,37 @@ export const getSigns = ({ status, token }) => async (dispatch) => {
     alert(error);
   }
 };
+
+export const uploadSignature = ({ token, file, username }) => async (dispatch) => {
+  try {
+
+    console.log(token, file, username)
+
+    const myHeaders = new Headers();
+    myHeaders.append(
+      'Authorization',
+      `token ${token}`
+    );
+
+    const formdata = new FormData();
+    formdata.append(
+      'picture',
+      file,
+    );
+    formdata.append('username', `${username}`);
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow',
+    };
+
+    fetch('https://api.jonastronco.xyz/signatures/', requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log('error', error));
+  } catch (error) {
+    alert(error);
+  }
+};
