@@ -72,7 +72,7 @@ const Application = ({ user, getSignatures, upload }) => {
             </GifContainer>
             <ImageInput type="file" onChange={changeHandler} />
             <ImageName>{file?.name}</ImageName>
-            <UploadButton onClick={handleOnclick}>Confirm</UploadButton>
+            <UploadButton disabled={file === null} onClick={handleOnclick}>Confirm</UploadButton>
           </ImageInputContainer> :
           <ImageInputContainer>
             <Title>Please upload your sign</Title>
