@@ -9,3 +9,7 @@ export const ImageInputContainer = styled.div`
 `;
 
 export const ImageInput = styled.input``;
+
+export const ImageName = styled.div`
+  
+`;

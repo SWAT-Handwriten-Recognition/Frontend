@@ -5,7 +5,7 @@ import Header from '../../components/Header/index.jsx';
 import { getSigns } from '../../utils/redux/thunks.js'
 import { connect } from 'react-redux'
 import { useEffect, useState } from 'react';
-import { ImageInput, ImageInputContainer } from './styled.js'
+import { ImageInput, ImageInputContainer, ImageName } from './styled.js'
 import { useAlert } from 'react-alert'
 
 const Application = ({ user, getSignatures }) => {
@@ -51,6 +51,7 @@ const Application = ({ user, getSignatures }) => {
       {isCompleted ? <h1>is completed</h1> :
         <ImageInputContainer>
           <ImageInput type="file" onChange={changeHandler} />
+          <ImageName>{file?.name}</ImageName>
         </ImageInputContainer>
       }
     </>
