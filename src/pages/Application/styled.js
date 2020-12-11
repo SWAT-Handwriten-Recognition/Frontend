@@ -8,7 +8,6 @@ export const ImageInputContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   position: absolute;
-  padding: 1rem;
   width: 100vw;
   z-index: 100;
 `;
@@ -42,6 +41,7 @@ export const GifContainer = styled.div`
 
   @media (max-width: 320px) {
     height: 65%;
+    width: 50%
   }
 
   @media (max-width: 425px) {

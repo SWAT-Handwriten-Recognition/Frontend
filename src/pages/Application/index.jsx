@@ -15,11 +15,13 @@ import {
 } from './styled.js';
 import { useAlert } from 'react-alert';
 import upload1 from '../../assets/Gif/upload1.gif'
+import upload2 from '../../assets/Gif/upload2.gif'
 
 const Application = ({ user, getSignatures, upload }) => {
   const [isCompleted, setIsCompleted] = useState(false);
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
+  const [isConfirm, setIsConfirm] = useState(true);
   const types = ['image/png', 'image/jpeg'];
   const alert = useAlert();
 
@@ -60,14 +62,23 @@ const Application = ({ user, getSignatures, upload }) => {
       {isCompleted ? (
         <h1>is completed</h1>
       ) : (
-        <ImageInputContainer>
-          <Title>Please upload your sign</Title>
-          <GifContainer>
-            <Gif src={upload1} />
-          </GifContainer>
-          <ImageInput type="file" onChange={changeHandler} />
-          <ImageName>{file?.name}</ImageName>
-        </ImageInputContainer>
+        isConfirm ?
+          <ImageInputContainer>
+            <Title>Please confirm your sign</Title>
+            <GifContainer>
+              <Gif src={upload2} />
+            </GifContainer>
+            <ImageInput type="file" onChange={changeHandler} />
+            <ImageName>{file?.name}</ImageName>
+          </ImageInputContainer> :
+          <ImageInputContainer>
+            <Title>Please upload your sign</Title>
+            <GifContainer>
+              <Gif src={upload1} />
+            </GifContainer>
+            <ImageInput type="file" onChange={changeHandler} />
+            <ImageName>{file?.name}</ImageName>
+          </ImageInputContainer>
       )}
     </>
   );
