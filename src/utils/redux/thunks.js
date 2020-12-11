@@ -58,8 +58,6 @@ export const uploadSignature = ({ token, file, username }) => async (
   dispatch
 ) => {
   try {
-    console.log(token, file, username);
-
     const myHeaders = new Headers();
     myHeaders.append('Authorization', `token ${token}`);
 
