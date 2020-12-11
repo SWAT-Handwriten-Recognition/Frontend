@@ -8,8 +8,13 @@ export const ImageInputContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   position: absolute;
+  padding: 1rem;
   width: 100vw;
   z-index: 100;
+`;
+
+export const Title = styled.h2`
+  color: white;
 `;
 
 export const ImageInput = styled.input`
@@ -19,4 +24,31 @@ export const ImageInput = styled.input`
 
 export const ImageName = styled.div`
   color: white;
+`;
+
+export const Gif = styled.video`
+  background-image: url(${(props) => props.src});
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
+export const GifContainer = styled.div`
+  align-items: center;
+  display: flex;
+  height: 80%;
+  justify-content: center;
+
+  @media (max-width: 320px) {
+    height: 65%;
+  }
+
+  @media (max-width: 425px) {
+    height: 70%;
+  }
+
+  @media (max-width: 768px) {
+    height: 60%;
+  }
 `;
