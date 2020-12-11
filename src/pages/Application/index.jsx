@@ -4,23 +4,27 @@
 import Header from '../../components/Header/index.jsx';
 import { getSigns } from '../../utils/redux/thunks.js'
 import { connect } from 'react-redux'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Application = ({ user, getSignatures }) => {
 
-  console.log(user?.status?.username)
+  const [isCompleted, setIsCompleted] = useState(false)
 
-  const checkSignatures = () => {
+  const checkSignatures = () => getSignatures(user)
 
-    getSignatures(user)
+  useEffect(() => {
+    checkSignatures()
+    if (user?.status?.signatures?.length !== 0) {
+      setIsCompleted(bool => bool = false)
+    }
+  }, [])
 
-  }
+  console.log(isCompleted)
 
   return (
     <>
       <Header normal={true} />
-      <h1>Im the app</h1>
-      <button onClick={checkSignatures}>test</button>
+      {isCompleted ? <h1>is completed</h1> : <h1>Is not completed</h1>}
     </>
   );
 };
