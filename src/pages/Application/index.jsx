@@ -22,10 +22,10 @@ import upload2 from '../../assets/Gif/upload2.gif';
 import confirm from '../../assets/Gif/confirmApplication.gif';
 
 const Application = ({ user, getSignatures, upload }) => {
-  const [isCompleted, setIsCompleted] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(undefined);
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
-  const [isConfirm, setIsConfirm] = useState(false);
+  const [isConfirm, setIsConfirm] = useState(undefined);
   const types = ['image/png', 'image/jpeg'];
   const alert = useAlert();
 
@@ -52,10 +52,17 @@ const Application = ({ user, getSignatures, upload }) => {
 
   useEffect(() => {
     checkSignatures();
-    if (user?.status?.signatures?.length !== 0) {
-      setIsCompleted((bool) => (bool = false));
-    }
   }, []);
+
+  useEffect(() => {
+    if (user?.status?.signatures?.length > 2) {
+      setIsCompleted((bool) => (bool = true));
+      setIsConfirm((bool) => (bool = true));
+    } else {
+      setIsCompleted((bool) => (bool = false));
+      setIsConfirm((bool) => (bool = false));
+    }
+  }, [checkSignatures])
 
   useEffect(() => {
     if (error) {
@@ -109,7 +116,7 @@ const Application = ({ user, getSignatures, upload }) => {
               setIsConfirm((bool) => (bool = true));
             }}
           >
-            Upload
+                Upload
           </UploadButton>
         </ImageInputContainer>
       )}

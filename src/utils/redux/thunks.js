@@ -58,12 +58,13 @@ export const getSigns = ({ status, token }) => async (dispatch) => {
       redirect: 'follow',
     };
 
-    fetch(`https://api.jonastronco.xyz/signatures/?username=${status?.username}`, requestOptions)
+    fetch(
+      `https://api.jonastronco.xyz/signatures/?username=${status?.username}`,
+      requestOptions
+    )
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => dispatch(getSignatures(result)))
       .catch((error) => console.log('error', error));
-
-    dispatch(getSignatures([{}]));
   } catch (error) {
     alert(error);
   }
