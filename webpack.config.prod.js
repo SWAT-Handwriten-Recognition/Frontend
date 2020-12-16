@@ -13,6 +13,8 @@ module.exports = merge(baseConfig, {
     react: 'React',
     'react-dom': 'ReactDOM',
     'react-router-dom': 'ReactRouterDOM',
-    axios: 'axios',
+  },
+  performance: {
+    hints: false
   }
 })
