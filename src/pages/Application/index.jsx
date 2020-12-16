@@ -59,10 +59,6 @@ const Application = ({ user, getSignatures, upload }) => {
   useEffect(() => {
     if (user?.status?.signatures?.length > 2) {
       setIsCompleted((bool) => (bool = true));
-      setIsConfirm((bool) => (bool = true));
-    } else {
-      setIsCompleted((bool) => (bool = false));
-      setIsConfirm((bool) => (bool = false));
     }
   }, [checkSignatures])
 
