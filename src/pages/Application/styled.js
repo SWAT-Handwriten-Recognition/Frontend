@@ -51,7 +51,35 @@ export const Gif = styled.video`
   background-size: cover;
 `;
 
+export const Gif2 = styled.video`
+  background-image: url(${(props) => props.src});
+  height: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
 export const GifContainer = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+
+  @media (max-width: 320px) {
+    height: 65%;
+    width: 50%;
+  }
+
+  @media (max-width: 425px) {
+    height: 70%;
+  }
+
+  @media (max-width: 768px) {
+    height: 60%;
+  }
+`;
+
+export const GifContainer2 = styled.div`
   align-items: center;
   display: flex;
   height: 80%;

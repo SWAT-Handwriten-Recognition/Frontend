@@ -15,6 +15,8 @@ import {
   UploadButton,
   ImageInputContainer2,
   ImageInput2,
+  GifContainer2,
+  Gif2
 } from './styled.js';
 import { useAlert } from 'react-alert';
 import upload1 from '../../assets/Gif/upload1.gif';
@@ -77,11 +79,19 @@ const Application = ({ user, getSignatures, upload }) => {
       {isCompleted ? (
         <ImageInputContainer2>
           <Title>Check your sign</Title>
-          <GifContainer>
-            <Gif src={confirm} />
-          </GifContainer>
+          <GifContainer2>
+            <Gif2 src={confirm} />
+          </GifContainer2>
           <ImageInput2 type="file" onChange={changeHandler} />
           <ImageName>{file?.name}</ImageName>
+          <UploadButton
+            disabled={file === null}
+            onClick={() => {
+              alert.success('the signatures match successfully')
+            }}
+          >
+            Check
+          </UploadButton>
         </ImageInputContainer2>
       ) : isConfirm ? (
         <ImageInputContainer>
