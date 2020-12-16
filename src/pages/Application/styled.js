@@ -12,11 +12,29 @@ export const ImageInputContainer = styled.div`
   z-index: 100;
 `;
 
+export const ImageInputContainer2 = styled.div`
+  align-items: center;
+  background: #fbfbfb;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100vw;
+  z-index: 100;
+`;
+
 export const Title = styled.h2`
-  color: white;
+  color: ${props => props.white ? 'white' : 'black'};
 `;
 
 export const ImageInput = styled.input`
+  border: 1px ridge white;
+  padding: 1rem;
+`;
+
+export const ImageInput2 = styled.input`
+  background: #fbfbfb;
   border: 1px ridge white;
   padding: 1rem;
 `;
@@ -56,9 +74,9 @@ export const GifContainer = styled.div`
 export const UploadButton = styled.button`
   box-shadow: 0px 10px 14px -7px #276873;
   background: ${(props) =>
-    props.disabled ?
-      'linear-gradient(to bottom, black 5%, white 100%)' :
-      'linear-gradient(to bottom, #599bb3 5%, #408c99 100%)'};
+    props.disabled
+      ? 'linear-gradient(to bottom, black 5%, white 100%)'
+      : 'linear-gradient(to bottom, #599bb3 5%, #408c99 100%)'};
   background-color: #599bb3;
   border-radius: 8px;
   display: inline-block;

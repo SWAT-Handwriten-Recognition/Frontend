@@ -12,11 +12,14 @@ import {
   Title,
   Gif,
   GifContainer,
-  UploadButton
+  UploadButton,
+  ImageInputContainer2,
+  ImageInput2
 } from './styled.js';
 import { useAlert } from 'react-alert';
 import upload1 from '../../assets/Gif/upload1.gif'
 import upload2 from '../../assets/Gif/upload2.gif'
+import confirm from '../../assets/Gif/confirmApplication.gif'
 
 const Application = ({ user, getSignatures, upload }) => {
   const [isCompleted, setIsCompleted] = useState(false);
@@ -61,11 +64,23 @@ const Application = ({ user, getSignatures, upload }) => {
     <>
       <Header normal={true} />
       {isCompleted ? (
-        <h1>is completed</h1>
+        <ImageInputContainer2>
+          <Title>Check your sign</Title>
+          <GifContainer>
+            <Gif src={confirm} />
+          </GifContainer>
+          <ImageInput2 type="file" onChange={changeHandler} />
+          <ImageName>{file?.name}</ImageName>
+          <UploadButton disabled={file === null} onClick={() => {
+            handleOnclick()
+            setIsCompleted(bool => bool = true)
+          }}
+          >Confirm</UploadButton>
+        </ImageInputContainer2>
       ) : (
         isConfirm ?
           <ImageInputContainer>
-            <Title>Please confirm your sign</Title>
+            <Title white={true}>Please confirm your sign</Title>
             <GifContainer>
               <Gif src={upload2} />
             </GifContainer>
@@ -78,7 +93,7 @@ const Application = ({ user, getSignatures, upload }) => {
             >Confirm</UploadButton>
           </ImageInputContainer> :
           <ImageInputContainer>
-            <Title>Please upload your sign</Title>
+            <Title white={true}>Please upload your sign</Title>
             <GifContainer>
               <Gif src={upload1} />
             </GifContainer>
